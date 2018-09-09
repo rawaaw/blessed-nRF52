@@ -9,3 +9,8 @@ config.h
 *.pyc
 *.sublime-project
 *.sublime-workspace
+*.c~
+*.h~
+*.c.orig
+*.h.orig
+
