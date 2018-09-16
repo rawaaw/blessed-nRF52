@@ -336,7 +336,7 @@
               <MiscControls>--reduce_paths</MiscControls>
               <Define>CUSTOM_BOARD_INC=yj16002 BSP_DEFINES_ONLY CONFIG_GPIO_AS_PINRESET FLOAT_ABI_HARD NRF52 NRF52832_XXAA NRF52_PAN_74 __HEAP_SIZE=8192 __STACK_SIZE=8192</Define>
               <Undefine></Undefine>
-              <IncludePath>..\include;..\platform\nRF52832;..\platform\yj16002;..\stack;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\common;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\nrf_soc_nosd;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\fifo;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\gpiote;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_section_vars;..\..\nRF5_SDK_15.0.0_a53641a\components\boards;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\hal;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\mdk;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src\prs;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\include;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx\legacy</IncludePath>
+              <IncludePath>..\include;..\platform\nRF52832;..\platform\yj16002;..\stack;..\ugfx_2.8;..\ugfx_2.8\src;..\ugfx_2.8\gdisp;..\ugfx_2.8\drivers\gdisp\ST7735;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\common;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\nrf_soc_nosd;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\fifo;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\gpiote;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_section_vars;..\..\nRF5_SDK_15.0.0_a53641a\components\boards;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\hal;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\mdk;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src\prs;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\include;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx\legacy</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -429,6 +429,11 @@
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\platform\nRF52832\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_drv_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx\legacy\nrf_drv_spi.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -525,6 +530,181 @@
               <FileType>1</FileType>
               <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx\legacy\nrf_drv_uart.c</FilePath>
             </File>
+            <File>
+              <FileName>nrfx_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src\nrfx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrfx_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src\nrfx_timer.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ugfx</GroupName>
+          <Files>
+            <File>
+              <FileName>gfx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gfx.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_fonts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_fonts.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_image.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_image.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_image_bmp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_image_bmp.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_image_gif.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_image_gif.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_image_jpg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_image_jpg.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_image_native.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_image_native.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_image_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_image_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_pixmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\gdisp_pixmap.c</FilePath>
+            </File>
+            <File>
+              <FileName>mf_font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\mcufont\mf_font.c</FilePath>
+            </File>
+            <File>
+              <FileName>mf_justify.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\mcufont\mf_justify.c</FilePath>
+            </File>
+            <File>
+              <FileName>mf_rlefont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\mcufont\mf_rlefont.c</FilePath>
+            </File>
+            <File>
+              <FileName>mf_scaledfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\mcufont\mf_scaledfont.c</FilePath>
+            </File>
+            <File>
+              <FileName>mf_bwfont.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\mcufont\mf_bwfont.c</FilePath>
+            </File>
+            <File>
+              <FileName>mf_encoding.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdisp\mcufont\mf_encoding.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_lld_ST7735.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\drivers\gdisp\ST7735\gdisp_lld_ST7735.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdriver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gdriver\gdriver.c</FilePath>
+            </File>
+            <File>
+              <FileName>gos_x_heap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gos\gos_x_heap.c</FilePath>
+            </File>
+            <File>
+              <FileName>gos_x_threads.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gos\gos_x_threads.c</FilePath>
+            </File>
+            <File>
+              <FileName>gos_raw32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\src\gos\gos_raw32.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf52832_raw32_ufgx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx_2.8\boards\base\nRF52832-uj16002\nrf52832_raw32_ufgx.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -607,11 +787,89 @@
         </Group>
         <Group>
           <GroupName>bci-ibeacon</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>0</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>2</vShortEn>
+                <vShortWch>2</vShortWch>
+                <v6Lto>2</v6Lto>
+                <v6WtE>2</v6WtE>
+                <v6Rtti>2</v6Rtti>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <uClangAs>2</uClangAs>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
           <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\examples\bci-ibeacon\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ugfx-st7735</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\examples\ugfx-st7735\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -642,7 +900,7 @@
       </component>
     </components>
     <files>
-      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf52.s">
+      <file attr="config" category="source" condition="ARM Compiler" name="Device\Source\arm\arm_startup_nrf52.s" version="8.16.0">
         <instance index="0">RTE\Device\nRF52832_xxAA\arm_startup_nrf52.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.16.0" condition="nRF52832 Device and CMSIS"/>
         <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.16.0"/>
@@ -650,7 +908,7 @@
           <targetInfo name="blessed_nRF52832_xxaa"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" name="Device\Source\system_nrf52.c">
+      <file attr="config" category="source" name="Device\Source\system_nrf52.c" version="8.16.0">
         <instance index="0">RTE\Device\nRF52832_xxAA\system_nrf52.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NordicSemiconductor" Cversion="8.16.0" condition="nRF52832 Device and CMSIS"/>
         <package license="License\license.txt" name="nRF_DeviceFamilyPack" schemaVersion="1.3" url="http://developer.nordicsemi.com/nRF5_SDK/pieces/nRF_DeviceFamilyPack/" vendor="NordicSemiconductor" version="8.16.0"/>

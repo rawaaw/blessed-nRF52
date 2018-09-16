@@ -13,4 +13,10 @@ config.h
 *.h~
 *.c.orig
 *.h.orig
+*.old
+keil5/Listings
+keil5/Objects
+keil5/RTE
+keil5/EventRecorderStub.scvd
+keil5/blessed.uvguix.andrew
 

@@ -47,34 +47,20 @@ extern "C" {
 #include "nrf_gpio.h"
 
 
-#define LED_START      11
+//#define LED_START      11
 #define LED_0          11
-#define LED_1          12
-#define LED_STOP       12
+//#define LED_STOP       12
 
 #define LEDS_ACTIVE_STATE 1
 
 #define BSP_LED_0      LED_0
-#define BSP_LED_1      LED_1
 
 #define LEDS_INV_MASK  0x00000000
 
-#define BUTTON_START   13
-#define BUTTON_0       13
-#define BUTTON_1       14
-#define BUTTON_STOP    14
-#define BUTTON_PULL    NRF_GPIO_PIN_PULLUP
+#define BUTTONS_NUMBER 0
+#define LEDS_NUMBER    1
 
-#define BUTTONS_ACTIVE_STATE 0
-
-#define BSP_BUTTON_0   BUTTON_0
-#define BSP_BUTTON_1   BUTTON_1
-
-#define BUTTONS_NUMBER 2
-#define LEDS_NUMBER    2
-
-#define BUTTONS_LIST { BUTTON_0, BUTTON_1 }
-#define LEDS_LIST { LED_0, LED_1 }
+#define LEDS_LIST { LED_0 }
 
 // UART pins
 #define RX_PIN_NUMBER  18
@@ -82,6 +68,19 @@ extern "C" {
 #define CTS_PIN_NUMBER 17
 #define RTS_PIN_NUMBER 15
 #define HWFC           true
+
+//TWI pins
+#define ARDUINO_SCL_PIN    19    // SCL signal pin
+#define ARDUINO_SDA_PIN    20    // SDA signal pin
+
+//GPIO
+#define PIN_GPIO0      12
+#define PIN_GPIO1      14
+#define PIN_GPIO2      13
+#define PIN_GPIO3      20
+#define PIN_GPIO4      19
+#define PIN_GPIO5      24
+#define PIN_GPIO6      23
 
 
 #ifdef __cplusplus

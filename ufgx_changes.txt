@@ -1,0 +1,8 @@
+added:
+ugfx_2.8\boards\base\nRF52832-uj16002\nrf52832_raw32_ufgx.c
+ugfx_2.8\boards\addons\gdisp\board_yj16002_nordic_nrf52.h (modified board_UC8173_nordic_nrf52_sdk11.h)
+ugfx_2.8\gfxconf.h (my config)
+ugfx_2.8\board_ST7735.h (reference to boards/addons/gdisp/board_yj16002_nordic_nrf52.h)
+
+modified:
+ugfx_2.8\drivers\gdisp\ST7735\gdisp_lld_ST7735.c

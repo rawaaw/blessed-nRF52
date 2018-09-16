@@ -1,0 +1,10 @@
+LCD                board    nRF
+
+1  GND    GND
+2  VCC    +5v
+3  SCK    GPIO1  blue   5   P0.14
+4  SDA    GPIO2  green  6   P0.13
+5  RES    GPIO4         12  P0.19
+6  RS(DC) GPIO3         11  P0.20
+7  CS     GPIO0  gray   3   P0.12
+8  LEDA   +3.3v
