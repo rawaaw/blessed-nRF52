@@ -275,7 +275,15 @@ LLDSPEC	void gdisp_lld_write_start(GDisplay *g) {
 LLDSPEC	void gdisp_lld_write_color(GDisplay *g) {
 	LLDCOLOR_TYPE	c;
 	c = gdispColor2Native(g->p.color);
-	write_data(g, c );
+  
+//#if LLDCOLOR_BITS <= 8
+//    write_data(g, c );
+//#elsif LLDCOLOR_BITS <= 16
+    write_data(g, (c >> 8) & 0xFF);
+    write_data(g, c & 0xFF);
+//#else
+//#error LDCLOLOR_BITS value
+//#endif  
 }
 
 LLDSPEC	void gdisp_lld_write_stop(GDisplay *g) {

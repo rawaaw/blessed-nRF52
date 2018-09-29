@@ -12,6 +12,10 @@
 
 #include "gfx.h"
 
+#include "nrf_log.h"
+#include "nrf_log_ctrl.h"
+#include "nrf_log_default_backends.h"
+
 #define COLOR_SIZE	20
 #define PEN_SIZE	25
 #define OFFSET		3
@@ -36,6 +40,8 @@ void drawScreen(void) {
 
 	gdispClear(White);
 	gdispDrawString(gdispGetWidth()-gdispGetStringWidth(msg, font1)-3, 30, msg, font1, Black);
+	gdispDrawString(gdispGetWidth()-gdispGetStringWidth(msg, font1)-3, 60, msg, font2, Black);
+	gdispDrawString(gdispGetWidth()-gdispGetStringWidth(msg, font1)-3, 90, msg, font3, Black);
 	
 	/* colors */
 	gdispFillArea(0 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Black);	/* Black */
@@ -70,17 +76,26 @@ static void inc_tick(void)
 
 int main(void)
 {
-	bsp_board_init(BSP_INIT_LEDS);
-        bsp_board_led_on(0);
+#if 1
+  APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+  NRF_LOG_DEFAULT_BACKENDS_INIT();
 
-	timer_init();
-	timer1ms = timer_create(TIMER_REPEATED);
-	timer_start(timer1ms, TIMER_MILLIS(1), inc_tick);
+  NRF_LOG_INFO("uGFX usage example application started.")
+  NRF_LOG_FLUSH();
+#endif
 
-	gfxInit();
-	drawScreen();
+  bsp_board_init(BSP_INIT_LEDS);
+  bsp_board_led_on(0);
 
-	evt_loop_run();
 
-	return 0;
+  timer_init();
+  timer1ms = timer_create(TIMER_REPEATED);
+  timer_start(timer1ms, TIMER_MILLIS(1), inc_tick);
+
+  gfxInit();
+  drawScreen();
+
+  evt_loop_run();
+
+  return 0;
 }

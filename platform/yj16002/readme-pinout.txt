@@ -24,8 +24,10 @@ P0.19 SCL/GPIO4 12                 GPIO4
 P0.24 GPIO5     17                 GPIO5
 P0.23 GPIO6     18                 GPIO6
 
-                           st-link
+                          st-link
 
-SWDCLK          13         yellow
-SWDIO           16         green
-GND                        blue
+                           1st var  2d var
+
+SWDCLK          13         violet  (yellow)
+SWDIO           16         gray    (green)
+GND                        black   (blue)

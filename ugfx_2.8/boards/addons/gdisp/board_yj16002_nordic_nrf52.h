@@ -31,6 +31,8 @@ static GFXINLINE bool_t init_board(GDisplay* g)
 	ret_code_t err = NRF_SUCCESS;
 
 	(void)g;
+  
+ // _spi_xfer_done = false;
 
 	// Initialize RESET pin
 	nrf_gpio_cfg_output(PIN_RESET);
@@ -115,7 +117,7 @@ static GFXINLINE void write_cmd(GDisplay* g, uint8_t cmd)
 	(void)g;
 
 	nrf_gpio_pin_clear(PIN_DC);
-        _spi_xfer_done = false;
+  _spi_xfer_done = false;
 	do{
 		rc = nrf_drv_spi_transfer(&spi, &cmd, 1, 0, 0);
 	}while (rc == NRF_ERROR_BUSY);
@@ -128,7 +130,7 @@ static GFXINLINE void write_data(GDisplay* g, uint8_t data)
 {
 	ret_code_t rc;
 	(void)g;
-	
+
 	nrf_gpio_pin_set(PIN_DC);
         _spi_xfer_done = false;
 	do{

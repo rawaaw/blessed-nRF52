@@ -336,7 +336,7 @@
               <MiscControls>--reduce_paths</MiscControls>
               <Define>CUSTOM_BOARD_INC=yj16002 BSP_DEFINES_ONLY CONFIG_GPIO_AS_PINRESET FLOAT_ABI_HARD NRF52 NRF52832_XXAA NRF52_PAN_74 __HEAP_SIZE=8192 __STACK_SIZE=8192</Define>
               <Undefine></Undefine>
-              <IncludePath>..\include;..\platform\nRF52832;..\platform\yj16002;..\stack;..\ugfx_2.8;..\ugfx_2.8\src;..\ugfx_2.8\gdisp;..\ugfx_2.8\drivers\gdisp\ST7735;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\common;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\nrf_soc_nosd;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\fifo;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\gpiote;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_section_vars;..\..\nRF5_SDK_15.0.0_a53641a\components\boards;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\hal;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\mdk;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src\prs;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\include;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx\legacy</IncludePath>
+              <IncludePath>..\include;..\platform\nRF52832;..\platform\yj16002;..\stack;..\ugfx_2.8;..\ugfx_2.8\src;..\ugfx_2.8\gdisp;..\ugfx_2.8\drivers\gdisp\ST7735;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\common;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\drivers_nrf\nrf_soc_nosd;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\uart;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\fifo;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\gpiote;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_section_vars;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_memobj;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\strerror;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\balloc;..\..\nRF5_SDK_15.0.0_a53641a\components\boards;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\hal;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\mdk;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\src\prs;..\..\nRF5_SDK_15.0.0_a53641a\modules\nrfx\drivers\include;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx;..\..\nRF5_SDK_15.0.0_a53641a\integration\nrfx\legacy;..\..\nRF5_SDK_15.0.0_a53641a\external\fprintf;..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\atomic</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -445,16 +445,16 @@
               <FileType>1</FileType>
               <FilePath>..\stack\bci.c</FilePath>
             </File>
-            <File>
-              <FileName>ll.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\stack\ll.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>nRF_libs</GroupName>
           <Files>
+            <File>
+              <FileName>ll.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stack\ll.c</FilePath>
+            </File>
             <File>
               <FileName>app_uart.c</FileName>
               <FileType>1</FileType>
@@ -590,6 +590,71 @@
                 </FileArmAds>
               </FileOption>
             </File>
+            <File>
+              <FileName>nrf_log_default_backends.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src\nrf_log_default_backends.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_log_frontend.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src\nrf_log_frontend.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_atomic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\atomic\nrf_atomic.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_memobj.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_memobj\nrf_memobj.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_balloc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\balloc\nrf_balloc.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_log_str_formatter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src\nrf_log_str_formatter.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_fprintf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\external\fprintf\nrf_fprintf.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_fprintf_format.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\external\fprintf\nrf_fprintf_format.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_util_platform.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util\app_util_platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_error.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util\app_error.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_error_weak.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\util\app_error_weak.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_log_backend_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src\nrf_log_backend_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>nrf_log_backend_serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\nRF5_SDK_15.0.0_a53641a\components\libraries\experimental_log\src\nrf_log_backend_serial.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -704,6 +769,11 @@
               <FileName>nrf52832_raw32_ufgx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\ugfx_2.8\boards\base\nRF52832-uj16002\nrf52832_raw32_ufgx.c</FilePath>
+            </File>
+            <File>
+              <FileName>gfxconf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\ugfx_2.8\gfxconf.h</FilePath>
             </File>
           </Files>
         </Group>
