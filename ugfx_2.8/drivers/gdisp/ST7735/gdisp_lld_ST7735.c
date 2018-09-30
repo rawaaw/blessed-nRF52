@@ -323,7 +323,7 @@ LLDSPEC void gdisp_lld_control(GDisplay *g) {
 			case powerOff:
 				acquire_bus(g);
 				// not implemented
-				release_bus();
+				release_bus(g);
 				set_backlight(g, 0);
 				break;
 			case powerSleep:

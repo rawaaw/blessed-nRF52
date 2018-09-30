@@ -74,14 +74,14 @@
 //#define GDISP_NEED_VALIDATION                        TRUE
 #define GDISP_NEED_CLIP                              TRUE
 #define GDISP_NEED_CIRCLE                            TRUE
-//#define GDISP_NEED_DUALCIRCLE                        FALSE
-//#define GDISP_NEED_ELLIPSE                           FALSE
-//#define GDISP_NEED_ARC                               FALSE
-//#define GDISP_NEED_ARCSECTORS                        FALSE
-//#define GDISP_NEED_CONVEX_POLYGON                    FALSE
+#define GDISP_NEED_DUALCIRCLE                        TRUE
+#define GDISP_NEED_ELLIPSE                           TRUE
+#define GDISP_NEED_ARC                               TRUE
+#define GDISP_NEED_ARCSECTORS                        TRUE
+#define GDISP_NEED_CONVEX_POLYGON                    TRUE
 //#define GDISP_NEED_SCROLL                            FALSE
 //#define GDISP_NEED_PIXELREAD                         FALSE
-//#define GDISP_NEED_CONTROL                           FALSE
+#define GDISP_NEED_CONTROL                           TRUE
 //#define GDISP_NEED_QUERY                             FALSE
 //#define GDISP_NEED_MULTITHREAD                       FALSE
 //#define GDISP_NEED_STREAMING                         FALSE
@@ -111,7 +111,7 @@
     #define GDISP_INCLUDE_FONT_DEJAVUSANS24_AA       TRUE
 //    #define GDISP_INCLUDE_FONT_DEJAVUSANS32_AA       FALSE
 //    #define GDISP_INCLUDE_FONT_DEJAVUSANSBOLD12_AA   FALSE
-//    #define GDISP_INCLUDE_USER_FONTS                 FALSE
+    #define GDISP_INCLUDE_USER_FONTS                 TRUE
 
 //#define GDISP_NEED_IMAGE                             FALSE
 //    #define GDISP_NEED_IMAGE_NATIVE                  FALSE
