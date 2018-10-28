@@ -7,10 +7,10 @@
 #include "boards.h"
 
 #define PIN_CS			PIN_GPIO0  //12
-#define PIN_SCK			PIN_GPIO1  //14
+#define PIN_SCK			PIN_GPIO1  //15
 #define PIN_MOSI		PIN_GPIO2  //13
-#define PIN_DC			PIN_GPIO3  //20
-#define PIN_RESET		PIN_GPIO4  //19
+#define PIN_DC			PIN_GPIO3  //11
+#define PIN_RESET		PIN_GPIO4  //14
 //#define PIN_BUSY		PIN_GPIO5  //24
 
 #define SPI_INSTANCE	0

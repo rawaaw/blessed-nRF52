@@ -48,7 +48,7 @@ extern "C" {
 
 
 //#define LED_START      11
-#define LED_0          11
+#define LED_0          18
 //#define LED_STOP       12
 
 #define LEDS_ACTIVE_STATE 1
@@ -74,13 +74,13 @@ extern "C" {
 #define ARDUINO_SDA_PIN    20    // SDA signal pin
 
 //GPIO
-#define PIN_GPIO0      12
-#define PIN_GPIO1      14
-#define PIN_GPIO2      13
-#define PIN_GPIO3      20
-#define PIN_GPIO4      19
-#define PIN_GPIO5      24
-#define PIN_GPIO6      23
+#define PIN_GPIO0      12        //ST7735 PIN_CS
+#define PIN_GPIO1      15        //ST7735 PIN_SCK
+#define PIN_GPIO2      13        //ST7735 PIN_MOSI
+#define PIN_GPIO3      11        //ST7735 PIN_DC
+#define PIN_GPIO4      14        //ST7735 PIN_RESET
+#define PIN_GPIO5      9         //BTN1
+#define PIN_GPIO6      10        //BTN2
 
 
 #ifdef __cplusplus
