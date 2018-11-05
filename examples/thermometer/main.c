@@ -74,7 +74,7 @@ int main(void)
 
   twi_init();
 
-#if 0
+#if 1
   BLUETOOTH_INIT(status);
   if (status < 0)
     return status;
@@ -95,7 +95,7 @@ int main(void)
       __WFE();
     }
 #endif
-#if 0
+#if 1
     len = bci_ad_put(data, BCI_AD_MFT_DATA, mft, sizeof(mft),
     						BCI_AD_INVALID);
 

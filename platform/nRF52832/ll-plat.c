@@ -36,7 +36,7 @@
 static adv_report_cb_t adv_report_cb = NULL;
 static struct adv_report *adv_report = NULL;
 
-void SWI0_IRQHandler(void)
+void SWI0_EGU0_IRQHandler(void)
 {
 	if (adv_report_cb)
 		adv_report_cb(adv_report);

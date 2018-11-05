@@ -1,10 +1,11 @@
-LCD                board    nRF
+LCD            yj16002  nRF    connector
+                board
+1  GND    GND                      1  black 
+2  VCC    +5v                      2  white 
+3  SCK    GPIO1   8    P0.15       4  brown 
+4  SDA    GPIO2   6    P0.13       5  red   
+5  RES    GPIO4   5    P0.14       6  orange
+6  RS(DC) GPIO3   4    P0.11       9  yellow
+7  CS     GPIO0   3    P0.12       10 green 
+8  LEDA   +3.3v                    11 gray  
 
-1  GND    GND
-2  VCC    +5v
-3  SCK    GPIO1  blue   5   P0.14
-4  SDA    GPIO2  green  6   P0.13
-5  RES    GPIO4         12  P0.19
-6  RS(DC) GPIO3         11  P0.20
-7  CS     GPIO0  gray   3   P0.12
-8  LEDA   +3.3v

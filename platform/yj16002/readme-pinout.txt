@@ -57,27 +57,38 @@ G  SWDIO SWDCLK  3.3v   BATT
 
 receiver:
 
-YJ-16002     connector     color
-              pinout
+LCD            yj16002  nRF    14 pin connector
+                board
+1  GND    GND                      1  black 
+2  VCC    +5v                      2  white 
+3  SCK    GPIO1   8    P0.15       4  brown 
+4  SDA    GPIO2   6    P0.13       5  red   
+5  RES    GPIO4   5    P0.14       6  orange
+6  RS(DC) GPIO3   4    P0.11       9  yellow
+7  CS     GPIO0   3    P0.12       10 green 
+8  LEDA   +3.3v                    11 gray  
 
-VDD             1          while
-GND             2          black
-P0.12 GPIO0     3          grey    GPIO0
-P0.11 LED0      4          violet --|>|--|330|--> GND
-P0.14 GPIO1     5          blue    GPIO1
-P0.13 GPIO2     6          green   GPIO2
-P0.16 TX        7          yellow
-P0.18 RX        9          red
+          GND                      12 black
+       BUTTON RST 14   P0.21       13 white
+       BUTTON 1   L1   P0.09       14 grey
+       BUTTON 2   L2   P0.10       15 violet
+          
+
 
 P0.21 reset     14      --+--|10k|--> VDD
                           |
                           |   -|-
                           +--*   *--> GND
+                           BUTTON RST
 
-                          st-link
+                                8 pin connector
 
-                           1st var  2d var
+GND                                1
+SWDIO            16                2
+SWDCLK           13                3
++3.3v            N/A               4
+Rx               9    P0.18        5
+Tx               7    P0.16        6
+GND                                7
+GND                                8
 
-SWDCLK          13         violet  (yellow)
-SWDIO           16         gray    (green)
-GND                        black   (blue)

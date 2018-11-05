@@ -80,7 +80,7 @@ int main(void)
 {
 
 	bsp_board_init(BSP_INIT_LEDS);
-        bsp_board_led_on(0);
+//        bsp_board_led_on(0);
 
 	log_init();
 	ll_init(&addr);
@@ -93,6 +93,8 @@ int main(void)
 	delay(SCAN_DURATION);
 
 	ll_scan_stop();
+
+	DBG("Scan End");
 
 	evt_loop_run();
 
