@@ -39,7 +39,7 @@
 
 #define SCAN_WINDOW			200000
 #define SCAN_INTERVAL			500000
-#define SCAN_DURATION			10000000	/* 10 s */
+#define SCAN_DURATION			100000000	/* 100 s */
 
 static const bdaddr_t addr = { { 0x14, 0x20, 0xCC, 0xDD, 0xEE, 0xFF },
 							BDADDR_TYPE_RANDOM };
