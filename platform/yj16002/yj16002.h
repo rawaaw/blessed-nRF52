@@ -48,7 +48,7 @@ extern "C" {
 
 
 //#define LED_START      11
-#define LED_0          18
+#define LED_0          11 // beacon board
 //#define LED_STOP       12
 
 #define LEDS_ACTIVE_STATE 1
@@ -65,13 +65,13 @@ extern "C" {
 // UART pins
 #define RX_PIN_NUMBER  18
 #define TX_PIN_NUMBER  16
-#define CTS_PIN_NUMBER 17
-#define RTS_PIN_NUMBER 15
+//#define CTS_PIN_NUMBER 17
+//#define RTS_PIN_NUMBER 15
 #define HWFC           true
 
 //TWI pins
-#define ARDUINO_SCL_PIN    19    // SCL signal pin
-#define ARDUINO_SDA_PIN    20    // SDA signal pin
+#define ARDUINO_SCL_PIN    13    // beacon SCL signal pin
+#define ARDUINO_SDA_PIN    14    // beacon SDA signal pin
 
 //GPIO
 #define PIN_GPIO0      12        //ST7735 PIN_CS
@@ -79,8 +79,10 @@ extern "C" {
 #define PIN_GPIO2      13        //ST7735 PIN_MOSI
 #define PIN_GPIO3      11        //ST7735 PIN_DC
 #define PIN_GPIO4      14        //ST7735 PIN_RESET
-#define PIN_GPIO5      9         //BTN1
-#define PIN_GPIO6      10        //BTN2
+
+#define PIN_GPIO9      9         //receiver BTN1 / beacon GP9 
+#define PIN_GPIO10     10        //receiver BTN2 / beacon GP10
+
 
 
 #ifdef __cplusplus

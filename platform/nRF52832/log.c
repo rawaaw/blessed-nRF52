@@ -29,15 +29,21 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <app_uart.h>
+//#include <app_uart.h>
 #include <boards.h>
-#include <nrf52_bitfields.h>
+//#include <nrf52_bitfields.h>
 
 #include <blessed/errcodes.h>
 #include <blessed/log.h>
 
-#include "nrf52832.h"
-#include "delay.h"
+//#include "nrf52832.h"
+//#include "delay.h"
+//#include "nrf_uart.h"
+
+#include "nrf_log.h"
+#include "nrf_log_ctrl.h"
+#include "nrf_log_default_backends.h"
+
 
 #if CONFIG_LOG_ENABLE
 
@@ -72,15 +78,18 @@
 #endif
 STATIC_ASSERT(BUFFER_LEN && !(BUFFER_LEN & (BUFFER_LEN - 1)));
 
+#if 0
 static volatile uint32_t wp = 0;
 static volatile uint32_t rp = 0;
 static uint8_t buffer[BUFFER_LEN] __attribute__ ((aligned));
+#endif
 
 static volatile uint8_t state = UNINITIALIZED;
 
 static char itosbuf[12];
 static char *itoc = "9876543210123456789";
 
+#if 0
 static __inline void tx_next_byte(void)
 {
 	if (BUFFER_USED_SPACE() == 0) {
@@ -99,6 +108,7 @@ static void uart_evt_handler(app_uart_evt_t *p_app_uart_evt)
 
 	tx_next_byte();
 }
+#endif
 
 static inline const char *itos(int32_t n)
 {
@@ -173,6 +183,7 @@ int16_t log_uint(uint32_t n)
 
 int16_t log_char(char c)
 {
+#if 0
 	if (state == UNINITIALIZED)
 		return -ENOREADY;
 
@@ -184,10 +195,16 @@ int16_t log_char(char c)
 	wp++;
 
 	return 0;
+#else
+  NRF_LOG_INFO("%c", c);
+  NRF_LOG_FLUSH();
+  return 0;
+#endif
 }
 
 int16_t log_string(const char *str)
 {
+#if 0
 	int16_t len;
 
 	if (state == UNINITIALIZED)
@@ -216,10 +233,16 @@ int16_t log_string(const char *str)
 	}
 
 	return 0;
+#else
+  NRF_LOG_INFO("%s", str);
+  NRF_LOG_FLUSH();
+  return 0;
+#endif
 }
 
 int16_t log_newline(void)
 {
+#if 0
 	if (state == UNINITIALIZED)
 		return -ENOREADY;
 
@@ -232,10 +255,16 @@ int16_t log_newline(void)
 	wp++;
 
 	return 0;
+#else
+  NRF_LOG_INFO("\r\n");
+  NRF_LOG_FLUSH();
+  return 0;
+#endif
 }
 
 int16_t log_printf(const char *format, ...)
 {
+#if 0
 	uint32_t len = BUFFER_EMPTY_SPACE();
 	char tmp[len];
 	va_list args;
@@ -245,10 +274,21 @@ int16_t log_printf(const char *format, ...)
 	va_end(args);
 
 	return log_string(tmp);
+#else
+	char tmp[BUFFER_LEN];
+	va_list args;
+
+	va_start(args, format);
+	vsnprintf(tmp, sizeof(tmp), format, args);
+	va_end(args);
+
+	return log_string(tmp);
+#endif
 }
 
 int16_t log_init(void)
 {
+#if 0
 	uint32_t err_code;
 
 	UNUSED(err_code);
@@ -256,8 +296,8 @@ int16_t log_init(void)
 	app_uart_comm_params_t params = {
 		RX_PIN_NUMBER,
 		TX_PIN_NUMBER,
-		RTS_PIN_NUMBER,
-		CTS_PIN_NUMBER,
+		NRF_UART_PSEL_DISCONNECTED,
+		NRF_UART_PSEL_DISCONNECTED,
 		APP_UART_FLOW_CONTROL_ENABLED,
 		false,
 		BAUD_RATE
@@ -276,6 +316,18 @@ int16_t log_init(void)
 	log_newline();
 
 	return 0;
+#else
+  if (state != UNINITIALIZED)
+    return -EALREADY;
+
+  APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
+  NRF_LOG_DEFAULT_BACKENDS_INIT();
+
+  log_newline();
+
+  state = READY;
+  return 0;
+#endif
 }
 
 #endif
